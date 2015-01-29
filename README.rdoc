@@ -2,6 +2,6 @@
 
 This is a rails app that shortens a url you give it, assuming you have a short domain name as well.
 
-This project requires postgre for its database and is built on ruby 2.1.3
+This project requires postgre for its database and is built on ruby 2.1.3 and rails 4.2.0
 
 You can view the app in action at https://still-river-5445.herokuapp.com/
