@@ -1,0 +1,9 @@
+.well
+  - if @code.present?
+    %p
+      Could not find url with hash 
+      %code
+        =@code
+      in database.
+  - else
+    %p Could not find url.

@@ -1,0 +1,23 @@
+!!! html
+%html
+  %head
+    %title Shorturl
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css'
+    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js' 
+    = csrf_meta_tags 
+
+  %body
+    .container{:style=>"width:500px;"}
+      .row
+        .col-xs-12.impact-font
+          The Short End URL
+      .row
+        .col-xs-offset-2.col-xs-10 
+          %i Breathing space back to your life, one character at a time.
+      .row.spacer
+      .row
+        .col-xs-12
+          = yield 

@@ -1,0 +1,41 @@
+- require "ShortUrl"
+
+- if flash[:short_url].blank?
+  = form_for ShortUrl.new, :url => create_short_url_path do |f|
+    = f.text_field :code, :id=>"forward-url-input", :class=>"form-control", :name => "short_url[forward]", :placeholder => "example: www.google.com"
+    = f.submit "Shorten!", :class=>"form-control btn btn-primary", :id=>"forward-url-submit"
+    
+  - if flash[:error].present?
+    %p= flash[:error]
+
+    
+- else
+
+  - full_short_url = request.original_url + flash[:short_url]["code"]
+
+  .row.spacer
+  .row
+    .col-xs-12
+      %p Your short url has been generated! 
+  .row
+    .col-xs-12
+      .form-control.custom-box
+        %a{:href => full_short_url}= full_short_url
+  .row.spacer
+  .row
+    .col-xs-12
+      %p which will automatically redirect to:
+  .row
+    .col-xs-12
+      .form-control.custom-box
+        %a{:href => flash[:short_url]["forward"]}= flash[:short_url]["forward"]
+  .row.spacer
+  .row
+    .col-xs-12
+      %p Click the link below to shorten another link!
+  .row
+    .col-xs-12
+      %a{:href => root_path}
+        .btn.btn-warning.form-control
+          Make Another!
+    
