@@ -9,8 +9,7 @@ class ShortUrlsController < ApplicationController
       short_url = ShortUrl.create!(create_params)
       redirect_to root_path, :flash => {:short_url => {:forward=>short_url.forward, :code=>short_url.code}}
     else 
-      @errors 
-      render root_path
+      redirect_to root_path, :flash => {:error => 'Forward url cannot be blank'}
     end
   end
   

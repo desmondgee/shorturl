@@ -3,10 +3,10 @@
 - if flash[:short_url].blank?
   = form_for ShortUrl.new, :url => create_short_url_path do |f|
     = f.text_field :code, :id=>"forward-url-input", :class=>"form-control", :name => "short_url[forward]", :placeholder => "example: www.google.com"
+    - if flash[:error].present?
+      .error= "(#{flash[:error]})"
     = f.submit "Shorten!", :class=>"form-control btn btn-primary", :id=>"forward-url-submit"
-    
-  - if flash[:error].present?
-    %p= flash[:error]
+
 
     
 - else

@@ -3,7 +3,7 @@ describe SplashController, type: :controller do
   describe 'GET #index' do
     it 'render splash page' do 
       get :index
-      expect(response).to render_template(:new)
+      expect(response).to render_template(:index)
     end
     
   end
