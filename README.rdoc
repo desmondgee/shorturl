@@ -5,5 +5,3 @@ This is a rails app that shortens a url you give it, assuming you have a short d
 This project requires postgre for its database and is built on ruby 2.1.3
 
 You can view the app in action at https://still-river-5445.herokuapp.com/
-
-<tt>rake doc:app</tt>.
